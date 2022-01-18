@@ -20,12 +20,11 @@ namespace LowCodeProject.Service.ServiceRBAC
         private IRepository<MyPowerModel, int> repository;
         public PowerModelService(IRepository<MyPowerModel, int> _repository)
         {
-            repository = _repository;
+            repository = _repository; 
         }
-
         //添加
         #region
-        [HttpPost, Route("PostRoleModel")]
+        [HttpPost, Route("PostAddPower")]
         public async Task<DataResult<int>> AddAsync(PowerModelDto roles)
         {
             try
@@ -55,7 +54,7 @@ namespace LowCodeProject.Service.ServiceRBAC
         /// <param name="id"></param>
         /// <returns></returns>
         #region
-        [HttpPost, Route("PostRolePowerModel")]
+        [HttpPost, Route("DeletePower")]
         public async Task<DataResult<PowerModelDto>> DeleteAsync(int id)
         {
             try
@@ -89,6 +88,7 @@ namespace LowCodeProject.Service.ServiceRBAC
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
+        [HttpPost, Route("QueryPower")]
         public async Task<DataResult<List<PowerModelDto>>> QueryAsync(int PageIndex, int PageSize)
         {
             try
@@ -115,6 +115,8 @@ namespace LowCodeProject.Service.ServiceRBAC
         /// <param name="roleModelDto"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
+        /// 
+        [HttpPost, Route("UpdatePower")]
         public async Task<DataResult<int>> UpdateAsync(PowerModelDto roleModelDto)
         {
             try

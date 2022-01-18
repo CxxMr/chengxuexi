@@ -5,7 +5,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>LowCodeProject</RootNamespace>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <DocumentationFile>E:\学习资料\Practical\LowCodeProject\aspnet-core\src\LowCodeProject.Application\bin\Debug\net6.0\LowCodeProject.HttpApi.Host.xml</DocumentationFile>
   </PropertyGroup>
 

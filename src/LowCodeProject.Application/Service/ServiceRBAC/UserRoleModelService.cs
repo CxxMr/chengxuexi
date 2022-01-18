@@ -20,13 +20,13 @@ namespace LowCodeProject.Service.ServiceRBAC
 {
     public class UserRoleModelService : ApplicationService, IUserRoleService
     {
-
         private IRepository<MyUserRoleModel, int> repository;
         public UserRoleModelService(IRepository<MyUserRoleModel, int> _repository)
         {
             repository = _repository;
         }
 
+        [HttpPost, Route("AddUserRole")]
         public async Task<DataResult<int>> AddAsync(UserRoleModelDto roleModelDto)
         {
             try
@@ -49,6 +49,29 @@ namespace LowCodeProject.Service.ServiceRBAC
                 };
             }
         }
+
+        /// <summary>
+        /// 人脸注册
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public  string  BaiDuYunAdd(string token, string base64, string tel)
+        {
+              return Helper.BaiduyunHelper.BaiDuYun_Recognition.add(token, base64, tel);
+        }
+
+        /// <summary>
+        /// 获取ToKen
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [HttpPost,Route("PostToken")]
+        public string BaiDuYunToken()
+        {
+            return Helper.BaiduyunHelper.BaiDuYun_Recognition.GetAccessToken();
+        }
+
+        [HttpPost, Route("DeleteUserRole")]
         public async Task<DataResult<UserRoleModelDto>> DeleteAsync(int id)
         {
             try
@@ -76,16 +99,19 @@ namespace LowCodeProject.Service.ServiceRBAC
             }
         }
 
-        public async Task<DataResult<List<UserRoleModelDto>>> QueryAsync(int PageIndex, int PageSize)
+        [HttpPost, Route("QueryUserRole")]
+        public async Task<DataPageReuslt<List<UserRoleModelDto>>> QueryAsync(int PageIndex, int PageSize)
         {
             try
             {
                 List<MyUserRoleModel> list = await repository.GetListAsync();
+                int total = list.Count();
                 var data = ObjectMapper.Map<List<MyUserRoleModel>, List<UserRoleModelDto>>(list);
                 data = data.Skip((PageIndex - 1) * PageSize).Take(PageSize).ToList();
-                return new DataResult<List<UserRoleModelDto>>
+                return new DataPageReuslt<List<UserRoleModelDto>>
                 {
                     Result = data,
+                    Total=total,
                     Message = "显示",
                     TypeCode = HelperEnum.HttpCode.成功
                 };
@@ -95,7 +121,7 @@ namespace LowCodeProject.Service.ServiceRBAC
                 throw;
             }
         }
-
+        [HttpPost,Route("UpdateUserRole")]
         public Task<DataResult<int>> UpdateAsync(UserRoleModelDto roleModelDto)
         {
             throw new NotImplementedException();

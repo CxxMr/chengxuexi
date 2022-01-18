@@ -36,9 +36,14 @@ namespace LowCodeProject
             CreateMap<MyPowerModel, PowerModelDto>();
             CreateMap<CreateUpDatePowerModelDto, MyPowerModel>();
 
+            //递归树映射
+            CreateMap<MyTreeModelDto, TreeModel>();
+            CreateMap<TreeModel, MyTreeModelDto>();
+            CreateMap<CreateUpDateTreeModelDto, TreeModel>();
 
-
-
+            CreateMap<TreeModelDto, TreeModel>();
+            CreateMap<TreeModel, TreeModelDto>();
+            CreateMap<CreateUpDateTreeModelDto, TreeModel>();
 
 
             //CreateMap<MyRoleModel, RoleModelDto>();

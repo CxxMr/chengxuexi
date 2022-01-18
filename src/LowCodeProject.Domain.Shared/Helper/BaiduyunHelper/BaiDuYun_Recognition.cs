@@ -6,18 +6,19 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 
+
 namespace LowCodeProject.Helper.BaiduyunHelper
 {
-    internal class BaiDuYun_Recognition
+    public class BaiDuYun_Recognition
     {
         // 调用getAccessToken()获取的 access_token建议根据expires_in 时间 设置缓存
         // 返回token示例
         public static String TOKEN = "24.adda70c11b9786206253ddb70affdc46.2592000.1493524354.282335-1234567";
 
         // 百度云中开通对应服务应用的 API Key 建议开通应用的时候多选服务
-        private static String clientId = "*********";
+        private static String clientId = "7f5uKoNKFWxg8mdBKdOo1W56";
         // 百度云中开通对应服务应用的 Secret Key
-        private static String clientSecret = "**********";
+        private static String clientSecret = "FIphCkqucllnzCRIGXPlGFTez43MupZ6";
 
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace LowCodeProject.Helper.BaiduyunHelper
 
 
             //获取返回的Access_Token
-            string Access_Token = "";
+            string Access_Token ="";
             JavaScriptSerializer Jss = new JavaScriptSerializer();
             Dictionary<string, object> DicText = (Dictionary<string, object>)Jss.DeserializeObject(result);
             //如果返回值中含有access_token，则将其值赋予Access_Token，不存在则说明获取失败。
@@ -96,8 +97,6 @@ namespace LowCodeProject.Helper.BaiduyunHelper
             Console.WriteLine(result);
             return result;
         }
-
-
 
         /// <summary>
         /// 人脸注册

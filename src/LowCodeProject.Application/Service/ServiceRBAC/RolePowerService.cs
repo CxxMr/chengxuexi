@@ -26,6 +26,7 @@ namespace LowCodeProject.Service.ServiceRBAC
             repository = _repository;
         }
 
+        [HttpPost,Route("AddRolePower")]
         public async Task<DataResult<int>> AddAsync(RolePowerModelDto roleModelDto)
         {
             try
@@ -49,6 +50,7 @@ namespace LowCodeProject.Service.ServiceRBAC
             }
         }
 
+        [HttpPost, Route("DeleteRolePower")]
         public async Task<DataResult<RolePowerModelDto>> DeleteAsync(int id)
         {
             try
@@ -76,6 +78,7 @@ namespace LowCodeProject.Service.ServiceRBAC
             }
         }
 
+        [HttpPost, Route("QueryRolePower")]
         public async Task<DataResult<List<RolePowerModelDto>>> QueryAsync(int PageIndex, int PageSize)
         {
             try
@@ -95,7 +98,7 @@ namespace LowCodeProject.Service.ServiceRBAC
                 throw;
             }
         }
-
+        [HttpPost, Route("UpdateRolePower")]
         public async Task<DataResult<int>> UpdateAsync(RolePowerModelDto roleModelDto)
         {
             try

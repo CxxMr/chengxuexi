@@ -5,12 +5,12 @@ using Volo.Abp.Application.Dtos;
 
 namespace LowCodeProject.DTO
 {
-    public class TreeModelDto : AuditedEntityDto<int>
+    public class MyTreeModelDto : AuditedEntityDto<int>
     {
         /// <summary>
         /// 递归树的主键Id
         /// </summary>
-      //  public int TreeId { get; set; }
+        //  public int TreeId { get; set; }
         /// <summary>
         ///  递归名称
         /// </summary>
@@ -40,7 +40,5 @@ namespace LowCodeProject.DTO
         /// </summary>
         public string Path { get; set; }
         //递归循环
-        public List<TreeModelDto> list { get; set; }
-
     }
 }

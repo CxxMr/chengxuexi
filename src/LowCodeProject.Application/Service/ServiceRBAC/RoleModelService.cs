@@ -97,6 +97,7 @@ namespace LowCodeProject.Service.ServiceRBAC
             try
             {
                 List<MyRoleModel> list = await repository.GetListAsync();
+                var total=list.Count();
                 var data = ObjectMapper.Map<List<MyRoleModel>, List<RoleModelDto>>(list);
                 data=data.Skip((PageIndex-1)*PageSize).Take(PageSize).ToList();
                 return new DataResult<List<RoleModelDto>>

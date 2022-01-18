@@ -11,8 +11,9 @@ using Volo.Abp.Application.Services;
 
 namespace LowCodeProject.IService.IServiceRBAC
 {
-    public interface IPowerService 
+    public interface IPowerService : IApplicationService
     {
+
         public Task<DataResult<int>> AddAsync(PowerModelDto powerModelDto);
 
         public Task<DataResult<PowerModelDto>> DeleteAsync(int id);
