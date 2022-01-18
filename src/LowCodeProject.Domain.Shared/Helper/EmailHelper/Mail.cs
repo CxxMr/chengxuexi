@@ -14,22 +14,18 @@ namespace LowCodeProject.Helper.EmailHelper
         /// 发送人
         /// </summary>
         public string fromPerson { get; set; }
-
         /// <summary>
         /// 收件人地址(多人)
         /// </summary>
         public string[] recipientArry { get; set; }
-
         /// <summary>
         /// 抄送地址(多人)
         /// </summary>
         public string[] mailCcArray { get; set; }
-
         /// <summary>
         /// 标题
         /// </summary>
         public string mailTitle { get; set; }
-
         /// <summary>
         /// 正文
         /// </summary>
