@@ -35,7 +35,6 @@ namespace LowCodeProject.Helper.EmailHelper
             {
                 mails.host = "smtp.163.com";//如果是QQ邮箱则：smtp.qq.com,依次类推  163:smtp.163.com
             }
-
             //将发件人邮箱带入MailAddress中初始化
             MailAddress mailAddress = new MailAddress(mails.fromPerson);
             //创建Email的Message对象
@@ -51,7 +50,6 @@ namespace LowCodeProject.Helper.EmailHelper
                         mailMessage.To.Add(item.ToString());
                 }
             }
-
             //判断抄送地址数组是否有数据
             if (mails.mailCcArray.Any())
             {

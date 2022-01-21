@@ -23,8 +23,6 @@ namespace LowCodeProject.Service.ServiceRBAC
             userModels = _userModels;
         }
 
-     
-
 
     }
 }

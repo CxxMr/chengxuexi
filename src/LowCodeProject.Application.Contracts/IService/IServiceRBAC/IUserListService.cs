@@ -15,5 +15,12 @@ namespace LowCodeProject.IService.IServiceRBAC
 
         //登录系统
         public Task<DataResult<IEnumerable<UserModelDto>>> DataUserLogin(UserModelDto userModelDto);
+
+        /// <summary>
+        /// 忘记密码+邮箱验证
+        /// </summary>
+        /// <returns></returns>
+        public Task<DataResult<List<UserModelDto>>> UpdatePassword(UserModelDto userModelDto);
+
     }
 }

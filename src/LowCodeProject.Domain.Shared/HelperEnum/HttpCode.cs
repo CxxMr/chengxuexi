@@ -45,5 +45,9 @@ namespace LowCodeProject.HelperEnum
         /// 服务器在运行，本次请求响应超时，请稍后重试
         /// </summary>
         网关超时 = 504,
+        /// <summary>
+        /// 失败
+        /// </summary>
+        失败=300
     }
 }
